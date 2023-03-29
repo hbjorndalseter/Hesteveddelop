@@ -96,7 +96,7 @@ public class HorseGame extends CardDeck {
     public Card goToStartCard(){
         if (this.counter == 4) {
         
-            if(!(Collections.min(locationValue) > this.counter)){
+            if(!(Collections.min(this.locationValue) > this.counter)){
                 return null;
             }
         }
@@ -106,7 +106,6 @@ public class HorseGame extends CardDeck {
             else{
                 return getRandomCard();
             }
-        
     }
 
    
