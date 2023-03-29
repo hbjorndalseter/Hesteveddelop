@@ -8,8 +8,9 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
     HashMap<String, Integer> winners;
     private int lengthOfGame;
-    List<Integer> raceLocation;
+    public HashMap<String, Integer> raceLocation; 
     List<String> users;
+    Card suit;
     
 
     public HorseGame(){
@@ -18,8 +19,13 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
         this.winners = new HashMap<String, Integer>();
         this.lengthOfGame = 10;
-        this.raceLocation = new ArrayList<>();
+        this.raceLocation = new HashMap<String, Integer>();
         this.users = new ArrayList<>();
+
+        raceLocation.put("Hearts", 0);
+        raceLocation.put("Clubs", 0);
+        raceLocation.put("Spades", 0);
+        raceLocation.put("Diamonds", 0);
 
     }
 
@@ -67,5 +73,54 @@ public class HorseGame extends CardDeck implements HorseInterface {
     public Card randomTableCard(){
         return getRandomCard();
     }
+
+    @Override
+    public void endGame() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'endGame'");
+    }
+   
+
+public void goForward(Card suit){
+    this.suit = pickRandomCard().getSuit();
+
+    if (suit.equals('H')) {
+        int currentValue = raceLocation.get("Hearts");
+        raceLocation.put("Hearts", currentValue + 1);
+        }
+    if (suit.equals('C')) {
+        int currentValue = raceLocation.get("Clubs");
+        raceLocation.put("Clubs", currentValue + 1);
+        }
+    if (suit.equals('S')) {
+        int currentValue = raceLocation.get("Spades");
+        raceLocation.put("Spades", currentValue + 1);
+        }
+    if (suit.equals('D')) {
+        int currentValue = raceLocation.get("Diamonds");
+        raceLocation.put("Diamonds", currentValue + 1);
+        }
+}
+
+public void goBackwards(Card suit){
+    this.suit = randomTableCard().getSuit();
+
+    if (suit.equals('H')) {
+        int currentValue = raceLocation.get("Hearts");
+        raceLocation.put("Hearts", currentValue - 1);
+        }
+    if (suit.equals('C')) {
+        int currentValue = raceLocation.get("Clubs");
+        raceLocation.put("Clubs", currentValue - 1);
+        }
+    if (suit.equals('S')) {
+        int currentValue = raceLocation.get("Spades");
+        raceLocation.put("Spades", currentValue - 1);
+        }
+    if (suit.equals('D')) {
+        int currentValue = raceLocation.get("Diamonds");
+        raceLocation.put("Diamonds", currentValue - 1);
+        }
+}
 
 }
