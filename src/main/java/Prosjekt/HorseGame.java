@@ -1,6 +1,7 @@
 package Prosjekt;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +14,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     List<String> users;
     Card suit;
     int counter;
+    List<Integer> locationValue;
     
 
     public HorseGame(){
@@ -23,6 +25,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
         this.lengthOfGame = 10;
         this.raceLocation = new HashMap<String, Integer>();
         this.users = new ArrayList<>();
+        this.locationValue = new ArrayList<>();
 
         raceLocation.put("Hearts", 0);
         raceLocation.put("Clubs", 0);
@@ -73,7 +76,12 @@ public class HorseGame extends CardDeck implements HorseInterface {
     }
     
     public Card randomTableCard(){
-        return getRandomCard();
+        if(!(Collections.min(locationValue) > this.counter)){
+            return null;
+        }
+        else{
+            return getRandomCard();
+        }
     }
 
     @Override
@@ -106,11 +114,10 @@ public void goForward(Card suit){
 
 public void getValuesRace(){
     this.counter = 1;
-    List<Integer> locationValue = new ArrayList<>();
     for (Integer value : raceLocation.values()){
-        locationValue.add(value);
+        this.locationValue.add(value);
     }
-    if (Collections.min(locationValue) >= this.counter){
+    if (Collections.min(this.locationValue) >= this.counter){
         this.counter++;
     }
 }
@@ -135,5 +142,9 @@ public void goBackwards(Card suit){
         raceLocation.put("Diamonds", currentValue - 1);
         }
 }
+
+    public void returnToStart(){
+        
+    }
 
 }
