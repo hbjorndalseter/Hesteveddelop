@@ -129,6 +129,8 @@ public class HorseGame extends CardDeck {
             int currentValue = raceLocation.get("Diamonds");
             raceLocation.put("Diamonds", currentValue + 1);
             }
+        // if (Collections.max(raceLocation.values()) == 8){
+        // }
     }
 
     public void getValuesRace(){
