@@ -76,13 +76,35 @@ public class HorseGame extends CardDeck implements HorseInterface {
     }
     
     public Card randomTableCard(){
-        if(!(Collections.min(locationValue) > this.counter)){
+        if (!(this.counter % 4 == 0)) {
+        
+            if(!(Collections.min(locationValue) > this.counter)){
+                return null;
+            }
+            else{
+                return getRandomCard();
+            }
+        }
+        else {
             return null;
         }
-        else{
-            return getRandomCard();
+    }
+
+    public Card goToStartCard(){
+        if (this.counter % 4 == 0) {
+        
+            if(!(Collections.min(locationValue) > this.counter)){
+                return null;
+            }
+            else{
+                return getRandomCard();
+            }
+        }
+        else {
+            return null;
         }
     }
+
 
     @Override
     public void endGame() {
@@ -143,8 +165,21 @@ public void goBackwards(Card suit){
         }
 }
 
-    public void returnToStart(){
-        
+    public void returnToStart(Card suit){
+        this.suit = goToStartCard().getSuit();
+
+        if (suit.equals('H')) {
+            raceLocation.put("Hearts", 0);
+            }
+        if (suit.equals('C')) {
+            raceLocation.put("Clubs", 0);
+            }
+        if (suit.equals('S')) {
+            raceLocation.put("Spades", 0);
+            }
+        if (suit.equals('D')) {
+            raceLocation.put("Diamonds", 0);
+            }
     }
 
 }
