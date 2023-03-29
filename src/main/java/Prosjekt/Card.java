@@ -31,7 +31,7 @@ public class Card {
 		return String.valueOf(suit) + face;
 	}
 
-	public char getSuit() {
+	public Card getSuit() {
 		return this.suit;
 	}
 
