@@ -110,57 +110,57 @@ public class HorseGame extends CardDeck {
 
    
 
-public void goForward(Card suit){
-    this.suit = pickRandomCard().getSuit();
+    public void goForward(Card suit){
+        this.suit = pickRandomCard().getSuit();
 
-    if (suit.equals('H')) {
-        int currentValue = raceLocation.get("Hearts");
-        raceLocation.put("Hearts", currentValue + 1);
-        }
-    if (suit.equals('C')) {
-        int currentValue = raceLocation.get("Clubs");
-        raceLocation.put("Clubs", currentValue + 1);
-        }
-    if (suit.equals('S')) {
-        int currentValue = raceLocation.get("Spades");
-        raceLocation.put("Spades", currentValue + 1);
-        }
-    if (suit.equals('D')) {
-        int currentValue = raceLocation.get("Diamonds");
-        raceLocation.put("Diamonds", currentValue + 1);
-        }
-}
-
-public void getValuesRace(){
-    this.counter = 1;
-    for (Integer value : raceLocation.values()){
-        this.locationValue.add(value);
+        if (suit.equals('H')) {
+            int currentValue = raceLocation.get("Hearts");
+            raceLocation.put("Hearts", currentValue + 1);
+            }
+        if (suit.equals('C')) {
+            int currentValue = raceLocation.get("Clubs");
+            raceLocation.put("Clubs", currentValue + 1);
+            }
+        if (suit.equals('S')) {
+            int currentValue = raceLocation.get("Spades");
+            raceLocation.put("Spades", currentValue + 1);
+            }
+        if (suit.equals('D')) {
+            int currentValue = raceLocation.get("Diamonds");
+            raceLocation.put("Diamonds", currentValue + 1);
+            }
     }
-    if (Collections.min(this.locationValue) >= this.counter){
-        this.counter++;
+
+    public void getValuesRace(){
+        this.counter = 1;
+        for (Integer value : raceLocation.values()){
+            this.locationValue.add(value);
+        }
+        if (Collections.min(this.locationValue) >= this.counter){
+            this.counter++;
+        }
     }
-}
 
-public void goBackwards(Card suit){
-    this.suit = randomTableCard().getSuit();
+    public void goBackwards(Card suit){
+        this.suit = randomTableCard().getSuit();
 
-    if (suit.equals('H')) {
-        int currentValue = raceLocation.get("Hearts");
-        raceLocation.put("Hearts", currentValue - 1);
-        }
-    if (suit.equals('C')) {
-        int currentValue = raceLocation.get("Clubs");
-        raceLocation.put("Clubs", currentValue - 1);
-        }
-    if (suit.equals('S')) {
-        int currentValue = raceLocation.get("Spades");
-        raceLocation.put("Spades", currentValue - 1);
-        }
-    if (suit.equals('D')) {
-        int currentValue = raceLocation.get("Diamonds");
-        raceLocation.put("Diamonds", currentValue - 1);
-        }
-}
+        if (suit.equals('H')) {
+            int currentValue = raceLocation.get("Hearts");
+            raceLocation.put("Hearts", currentValue - 1);
+            }
+        if (suit.equals('C')) {
+            int currentValue = raceLocation.get("Clubs");
+            raceLocation.put("Clubs", currentValue - 1);
+            }
+        if (suit.equals('S')) {
+            int currentValue = raceLocation.get("Spades");
+            raceLocation.put("Spades", currentValue - 1);
+            }
+        if (suit.equals('D')) {
+            int currentValue = raceLocation.get("Diamonds");
+            raceLocation.put("Diamonds", currentValue - 1);
+            }
+    }
 
     public void returnToStart(Card suit){
         this.suit = goToStartCard().getSuit();
