@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 public class HorseGame extends CardDeck {
 
@@ -129,9 +130,25 @@ public class HorseGame extends CardDeck {
             int currentValue = raceLocation.get("Diamonds");
             raceLocation.put("Diamonds", currentValue + 1);
             }
-        // if (Collections.max(raceLocation.values()) == 8){
-        // }
+        if (Collections.max(raceLocation.values()) == 8){
+            List<Integer> winnerValue = new ArrayList<>();
+            for (Integer locationValues : raceLocation.values()){
+                if (locationValues == 8){
+                    winnerValue.add(locationValues);
+                }
+            }
+            if (winnerValue.size() == 1){
+            this.randomTableCard();
+            for (Entry<String, Integer> el : this.raceLocation.entrySet()){
+                if ( el.getValue() == 8){
+                    char firstKey = el.getKey().charAt(0);
+                    Card winnerCard = new Card(firstKey, 0);
+                    this.returnToStart(winnerCard);
+                }
+            }
+        }
     }
+}
 
     public void getValuesRace(){
         this.counter = 1;
