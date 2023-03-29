@@ -64,6 +64,8 @@ public class HorseGame extends CardDeck implements HorseInterface {
         return getRandomCard();
     }
     
+    public Card randomTableCard(){
+        return getRandomCard();
+    }
 
-    
 }
