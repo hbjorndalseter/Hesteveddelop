@@ -1,15 +1,13 @@
 package Prosjekt;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class HorseGame extends CardDeck implements HorseInterface {
+public class HorseGame extends CardDeck {
 
     HashMap<String, Integer> winners;
-    private int lengthOfGame;
     public HashMap<String, Integer> raceLocation; 
     List<String> users;
     Card suit;
@@ -22,7 +20,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
         super(52);
 
         this.winners = new HashMap<String, Integer>();
-        this.lengthOfGame = 10;
         this.raceLocation = new HashMap<String, Integer>();
         this.users = new ArrayList<>();
         this.locationValue = new ArrayList<>();
@@ -34,42 +31,42 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
     }
 
-    @Override
-    public void newGame(String...userNames) {
-        if(userNames.length <= 5){
-            return;
-        }
-        else{
-            for (String userName : userNames){
-                this.createUsername(userName);
-            }
-            this.runGame();
-        }
-    }
+    // @Override
+    // public void newGame(String...userNames) {
+    //     if(userNames.length <= 5){
+    //         return;
+    //     }
+    //     else{
+    //         for (String userName : userNames){
+    //             this.createUsername(userName);
+    //         }
+    //         this.runGame();
+    //     }
+    // }
 
-    @Override
-    public void runGame() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'runGame'");
-    }
+    // @Override
+    // public void runGame() {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'runGame'");
+    // }
 
-    @Override
-    public void addWinner() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addWinner'");
-    }
+    // @Override
+    // public void addWinner() {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'addWinner'");
+    // }
 
-    @Override
-    public void createUsername(String userName) {
-        if(!(userName.matches("[a-zA-Z]+"))){
-            for (String user : users){
-                if(user.equalsIgnoreCase(userName))
-            throw new IllegalArgumentException("Username can only consist of letters, or the username already exists");
-            }
-        }
-        else{this.users.add(userName);
-        }
-    }
+    // @Override
+    // public void createUsername(String userName) {
+    //     if(!(userName.matches("[a-zA-Z]+"))){
+    //         for (String user : users){
+    //             if(user.equalsIgnoreCase(userName))
+    //         throw new IllegalArgumentException("Username can only consist of letters, or the username already exists");
+    //         }
+    //     }
+    //     else{this.users.add(userName);
+    //     }
+    // }
 
     public Card pickRandomCard(){
         return getRandomCard();
@@ -91,10 +88,13 @@ public class HorseGame extends CardDeck implements HorseInterface {
     }
 
     public Card goToStartCard(){
-        if (this.counter % 4 == 0) {
+        if (this.counter == 4) {
         
             if(!(Collections.min(locationValue) > this.counter)){
                 return null;
+            }
+            else if (Collections.max(locationValue) == 8){
+                return getRandomCard();
             }
             else{
                 return getRandomCard();
@@ -106,11 +106,11 @@ public class HorseGame extends CardDeck implements HorseInterface {
     }
 
 
-    @Override
-    public void endGame() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'endGame'");
-    }
+    // @Override
+    // public void endGame() {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'endGame'");
+    // }
    
 
 public void goForward(Card suit){
