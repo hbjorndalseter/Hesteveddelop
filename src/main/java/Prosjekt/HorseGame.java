@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class HorseGame implements HorseInterface{
+public class HorseGame extends CardDeck implements HorseInterface {
 
     HashMap<String, Integer> winners;
     private int lengthOfGame;
     List<Integer> raceLocation;
     List<String> users;
+    List<Card>
+
+    
 
     public HorseGame(){
 
@@ -23,9 +26,16 @@ public class HorseGame implements HorseInterface{
     }
 
     @Override
-    public void newGame() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'newGame'");
+    public void newGame(String...userNames) {
+        if(userNames.length <= 5){
+            return;
+        }
+        else{
+            for (String userName : userNames){
+                this.createUsername(userName);
+            }
+            this.runGame();
+        }
     }
 
     @Override
@@ -43,7 +53,10 @@ public class HorseGame implements HorseInterface{
     @Override
     public void createUsername(String userName) {
         if(!(userName.matches("[a-zA-Z]+"))){
-            throw new IllegalArgumentException("Username can only cinsist of letters");
+            for (String user : users){
+                if(user.equalsIgnoreCase(userName))
+            throw new IllegalArgumentException("Username can only consist of letters, or the username already exists");
+            }
         }
         else{this.users.add(userName);
         }
