@@ -10,18 +10,16 @@ public class HorseGame extends CardDeck implements HorseInterface {
     private int lengthOfGame;
     List<Integer> raceLocation;
     List<String> users;
-    List<Card>
-
     
 
     public HorseGame(){
+
+        super(52);
 
         this.winners = new HashMap<String, Integer>();
         this.lengthOfGame = 10;
         this.raceLocation = new ArrayList<>();
         this.users = new ArrayList<>();
-
-
 
     }
 
@@ -60,6 +58,10 @@ public class HorseGame extends CardDeck implements HorseInterface {
         }
         else{this.users.add(userName);
         }
+    }
+
+    public Card pickRandomCard(){
+        return getRandomCard();
     }
     
 }
