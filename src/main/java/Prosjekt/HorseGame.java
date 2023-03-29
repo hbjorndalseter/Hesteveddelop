@@ -68,6 +68,12 @@ public class HorseGame extends CardDeck {
     //     }
     // }
 
+     // @Override
+    // public void endGame() {
+    //     // TODO Auto-generated method stub
+    //     throw new UnsupportedOperationException("Unimplemented method 'endGame'");
+    // }
+
     public Card pickRandomCard(){
         return getRandomCard();
     }
@@ -105,12 +111,6 @@ public class HorseGame extends CardDeck {
         }
     }
 
-
-    // @Override
-    // public void endGame() {
-    //     // TODO Auto-generated method stub
-    //     throw new UnsupportedOperationException("Unimplemented method 'endGame'");
-    // }
    
 
 public void goForward(Card suit){
