@@ -3,7 +3,7 @@ package Prosjekt;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HorseGameController extends CardDeck{
+public class HorseGameController{
     
     public HashMap<String, Integer> raceLocation; 
     private ArrayList<Card> cards;

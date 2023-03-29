@@ -1,6 +1,7 @@
 package Prosjekt;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -11,6 +12,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     public HashMap<String, Integer> raceLocation; 
     List<String> users;
     Card suit;
+    int counter;
     
 
     public HorseGame(){
@@ -100,6 +102,17 @@ public void goForward(Card suit){
         int currentValue = raceLocation.get("Diamonds");
         raceLocation.put("Diamonds", currentValue + 1);
         }
+}
+
+public void getValuesRace(){
+    this.counter = 1;
+    List<Integer> locationValue = new ArrayList<>();
+    for (Integer value : raceLocation.values()){
+        locationValue.add(value);
+    }
+    if (Collections.min(locationValue) >= this.counter){
+        this.counter++;
+    }
 }
 
 public void goBackwards(Card suit){
