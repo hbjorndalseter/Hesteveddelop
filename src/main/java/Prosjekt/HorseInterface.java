@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface HorseInterface {
     
-public void newGame();
+public void newGame(String...userNames);
 
 public void runGame();
 
