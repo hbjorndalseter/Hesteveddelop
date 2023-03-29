@@ -6,6 +6,7 @@ public class HorseGameController {
     
     public ArrayList<Integer> raceLocation; 
     private ArrayList<Card> cards;
+    private Object suit;
 
 
     public HorseGameController() {
@@ -13,8 +14,11 @@ public class HorseGameController {
 
     }
 
-    public void goForward(){
-        this.card = pickRandomCard().getSuit()
+    public void goForward(Card suit){
+        this.suit = pickRandomCard().getSuit();
+        if (suit.equals('A')) {
+            
+        }
     }
 
 
