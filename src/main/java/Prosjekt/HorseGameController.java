@@ -14,11 +14,16 @@ public class HorseGameController {
 
     }
 
+<<<<<<< HEAD
     public void goForward(Card suit){
         this.suit = pickRandomCard().getSuit();
         if (suit.equals('A')) {
             
         }
+=======
+    public void goForward(){
+        this.suit = pickRandomCard().getSuit();
+>>>>>>> fa20d8b (hakke peil)
     }
 
 

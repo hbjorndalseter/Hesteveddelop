@@ -2,6 +2,8 @@ package Prosjekt;
 
 import java.util.ArrayList;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public abstract class CardDeck {
 
 	// array to hold Card objects, filled in the constructor
@@ -47,4 +49,10 @@ public abstract class CardDeck {
 			cards.add(i * 2 + 1, card);
 		}
 	}
+
+    public Card getRandomCard(){
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 52 + 1);
+        return cards.get(randomNum);
+        
+    }
 }
