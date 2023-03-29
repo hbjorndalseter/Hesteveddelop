@@ -99,16 +99,14 @@ public class HorseGame extends CardDeck {
             if(!(Collections.min(locationValue) > this.counter)){
                 return null;
             }
-            else if (Collections.max(locationValue) == 8){
+        }
+        else if (Collections.max(locationValue) == 8){
                 return getRandomCard();
             }
             else{
                 return getRandomCard();
             }
-        }
-        else {
-            return null;
-        }
+        
     }
 
    
