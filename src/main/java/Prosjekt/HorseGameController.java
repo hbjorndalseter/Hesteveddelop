@@ -36,9 +36,7 @@ public class HorseGameController {
 
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) {
-        game.pickRandomCard();
+        ///game.pickRandomCard();
         System.out.println(game.pickRandomCard());
 }
-
-
 }

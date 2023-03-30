@@ -11,16 +11,19 @@ public abstract class CardDeck {
 	private static ArrayList<Card> cards = new ArrayList<>();
 	private ArrayList<Card> usedCards;
 	private static Random rand = new Random();
+	private ArrayList<Card> originalList = new ArrayList<>();
 
 	public CardDeck(int suitSize) {
 		for (int i = 0; i < Card.SUITS.length(); i++) {
 			for (int face = 1; face <= suitSize; face++) {
 				Card card = new Card(Card.SUITS.charAt(i), face);
 				cards.add(card);
+				originalList.add(card);
 			}
 		}
 		this.usedCards = new ArrayList<>();
 		this.rand = new Random();
+		
 	}
 
 	@Override
@@ -64,10 +67,19 @@ public abstract class CardDeck {
 
     public Card getRandomCard(){
         // int randomNum = ThreadLocalRandom.current().nextInt(0, 52 - this.counter);
-		int randomNum = rand.nextInt(cards.size());
-		Card card = cards.get(randomNum);
-		cards.remove(card);
-		return card;
-	}
+		if (cards.isEmpty()) {
+            // Refill the deck with all 52 cards
+			//cards = originalList;
+			int randomNummer = rand.nextInt(originalList.size());
+			Card kort = originalList.get(randomNummer);
+			originalList.remove(kort);
+			return kort;
+		} else {
+			int randomNum = rand.nextInt(cards.size());
+			Card card = cards.get(randomNum);
+			cards.remove(card);
+			return card;
+		}
 
+	}
 }
