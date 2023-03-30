@@ -2,23 +2,25 @@ package Prosjekt;
 
 import java.util.ArrayList;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 
 public abstract class CardDeck {
 
 	// array to hold Card objects, filled in the constructor
-	private ArrayList<Card> cards;
+	private static ArrayList<Card> cards = new ArrayList<>();
 	private ArrayList<Card> usedCards;
+	private static Random rand = new Random();
 
 	public CardDeck(int suitSize) {
-		cards = new ArrayList<Card>();
 		for (int i = 0; i < Card.SUITS.length(); i++) {
 			for (int face = 1; face <= suitSize; face++) {
 				Card card = new Card(Card.SUITS.charAt(i), face);
 				cards.add(card);
 			}
 		}
+		this.usedCards = new ArrayList<>();
+		this.rand = new Random();
 	}
 
 	@Override
@@ -34,6 +36,10 @@ public abstract class CardDeck {
 
 	public int getCardCount() {
 		return cards.size();
+	}
+
+	public ArrayList<Card> getCardDeck(){
+		return cards;
 	}
 
 	public Card getCard(int i) {
@@ -52,15 +58,16 @@ public abstract class CardDeck {
 		}
 	}
 
-    public Card getRandomCard(){
-        int randomNum = ThreadLocalRandom.current().nextInt(1, 52 + 1);
-		Card card = cards.get(randomNum);
-		if (usedCards.contains(card)){
-			System.out.println("Card already used!");
-		}
-		else{
-		usedCards.add(card);
-        return card;
-		}        
+	public void removeUsedCard(Card card){
+
 	}
+
+    public Card getRandomCard(){
+        // int randomNum = ThreadLocalRandom.current().nextInt(0, 52 - this.counter);
+		int randomNum = rand.nextInt(cards.size());
+		Card card = cards.get(randomNum);
+		cards.remove(card);
+		return card;
+	}
+
 }
