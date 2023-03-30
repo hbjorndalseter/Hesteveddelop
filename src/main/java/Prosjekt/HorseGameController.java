@@ -19,8 +19,11 @@ public class HorseGameController {
     @FXML
     private Button newCardButton;
 
+    HorseGame game;
+
     public HorseGameController() {
         HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
+        this.game = new HorseGame();
         
     }
 
@@ -31,7 +34,7 @@ public class HorseGameController {
 
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) {
-        
+        game.getRandomCard();
     }
     
 
