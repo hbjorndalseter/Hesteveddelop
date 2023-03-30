@@ -23,7 +23,7 @@ public class HorseGameController {
 
     public HorseGameController() {
         HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
-        this.game = new HorseGame();
+        //this.game = new HorseGame();
         
     }
 
@@ -34,7 +34,7 @@ public class HorseGameController {
 
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) {
-        game.getRandomCard();
+        //game.getRandomCard();
     }
     
 
