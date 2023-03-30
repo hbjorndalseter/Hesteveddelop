@@ -18,7 +18,7 @@ public class HorseGame extends CardDeck {
 
     public HorseGame(){
 
-        super(52);
+        super(13);
 
         this.winners = new HashMap<String, Integer>();
         this.raceLocation = new HashMap<String, Integer>();
@@ -196,6 +196,12 @@ public class HorseGame extends CardDeck {
         if (suit.equals('D')) {
             raceLocation.put("Diamonds", 0);
             }
+    }
+    public static void main(String[] args) {
+        HorseGame test1 = new HorseGame();
+        Card randomCard = test1.getRandomCard();
+        System.out.println(randomCard);
+        
     }
 
 }
