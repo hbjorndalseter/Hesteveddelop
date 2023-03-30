@@ -10,6 +10,6 @@ public void addWinner();
 
 public void createUsername(String userName);
 
-public void endGame();
+public String endGame();
 
 }
