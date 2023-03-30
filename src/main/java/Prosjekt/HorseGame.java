@@ -95,19 +95,24 @@ public class HorseGame extends CardDeck {
     }
 
     public Card goToStartCard(){
+        boolean hjalmarogvegard = true;
         if (this.counter == 4) {
         
             if(!(Collections.min(this.locationValue) > this.counter)){
                 return null;
             }
-        }
-        else if (Collections.max(locationValue) == 8){
-                return getRandomCard();
-            }
             else{
                 return getRandomCard();
             }
-    }
+        }
+        else if (Collections.max(locationValue) == 8 && hjalmarogvegard == true) {
+                hjalmarogvegard = false;
+                return getRandomCard();
+            }
+        else {
+            return null;
+        }    
+    }   
 
    
 
