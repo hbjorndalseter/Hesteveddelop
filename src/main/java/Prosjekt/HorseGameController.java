@@ -23,18 +23,21 @@ public class HorseGameController {
 
     public HorseGameController() {
         HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
-        this.game = new HorseGame();
         
     }
 
     @FXML
     private void OnNewGameButtonPressed(ActionEvent event) {
         System.out.println(newGameButton.getText());
+        this.game = new HorseGame();
+        
+
     }
 
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) {
         game.getRandomCard();
+        System.out.println(game.getRandomCard());
     }
 
     

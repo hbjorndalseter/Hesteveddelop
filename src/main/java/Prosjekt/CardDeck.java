@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+
 public abstract class CardDeck {
 
 	// array to hold Card objects, filled in the constructor
 	private ArrayList<Card> cards;
+	private ArrayList<Card> usedCards;
 
 	public CardDeck(int suitSize) {
 		cards = new ArrayList<Card>();
@@ -52,7 +54,14 @@ public abstract class CardDeck {
 
     public Card getRandomCard(){
         int randomNum = ThreadLocalRandom.current().nextInt(1, 52 + 1);
-        return cards.get(randomNum);
+		Card card = cards.get(randomNum);
+		if (usedCards.contains(card)){
+			System.out.println("Card already used!");
+		}
+		else{
+		usedCards.add(card);
+        return card;
+		}
         
     }
 }
