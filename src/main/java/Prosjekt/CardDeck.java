@@ -61,7 +61,6 @@ public abstract class CardDeck {
 		else{
 		usedCards.add(card);
         return card;
-		}
-        
-    }
+		}        
+	}
 }
