@@ -11,7 +11,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     HashMap<String, Integer> winners;
     public HashMap<String, Integer> raceLocation; 
     List<String> users;
-    Card suit;
+    char suit;
     int counter;
     List<Integer> locationValue;
     String winnerKey;
@@ -207,7 +207,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
         System.out.println(randomCard);
         test1.winnerKey();
         System.out.println(test1.endGame());
-        
+        System.out.println(test1.getCardDeck());        
     }
 
 }
