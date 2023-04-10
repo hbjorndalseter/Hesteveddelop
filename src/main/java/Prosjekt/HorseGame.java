@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
+import javafx.scene.layout.GridPane;
+
 public class HorseGame extends CardDeck implements HorseInterface {
 
     HashMap<String, Integer> winners;
@@ -16,6 +18,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     List<Integer> locationValue;
     String winnerKey;
     boolean winnerIsSet;
+    GridPane gridPane;
     
 
     public HorseGame(){
@@ -27,6 +30,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
         this.users = new ArrayList<>();
         this.locationValue = new ArrayList<>();
         this.winnerIsSet = false;
+        this.gridPane = new GridPane();
 
         raceLocation.put("Hearts", 0);
         raceLocation.put("Clubs", 0);
