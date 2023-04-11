@@ -103,7 +103,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     public Card randomTableCard(){
         if (!(this.counter % 4 == 0)) {
         
-            if(!(Collections.min(locationValue) > this.counter)){
+            if(!(Collections.min(locationValue) > this.counter) && Collections.min(locationValue) < 0){
                 return null;
             }
             else{
@@ -169,8 +169,8 @@ public class HorseGame extends CardDeck implements HorseInterface {
         }
     }
 
-    public void goBackwards(Card suit){
-        this.suit = randomTableCard().getSuit();
+    public void goBackwards(Card card){
+        Character suit = card.getSuit();
 
         if (suit.equals('H')) {
             int currentValue = raceLocation.get("Hearts");
