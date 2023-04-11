@@ -205,13 +205,13 @@ public class HorseGame extends CardDeck implements HorseInterface {
             raceLocation.put("Diamonds", 0);
             }
     }
-    public static void main(String[] args) {
-        HorseGame test1 = new HorseGame();
-        Card randomCard = test1.getRandomCard();
-        System.out.println(randomCard);
-        test1.winnerKey();
-        System.out.println(test1.endGame());
-        System.out.println(test1.getCardDeck());        
-    }
+    // public static void main(String[] args) {
+    //     HorseGame test1 = new HorseGame();
+    //     Card randomCard = test1.getRandomCard();
+    //     System.out.println(randomCard);
+    //     test1.winnerKey();
+    //     System.out.println(test1.endGame());
+    //     System.out.println(test1.getCardDeck());        
+    // }
 
 }
