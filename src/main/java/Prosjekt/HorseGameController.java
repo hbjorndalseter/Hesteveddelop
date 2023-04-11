@@ -41,6 +41,7 @@ public class HorseGameController {
     Image pokemonCardSixth;
     Image pokemonCardSeventh;
     Image pokemonCardEight;
+    Image Pokemon;
     
     @FXML
     private void initialize() {
@@ -50,24 +51,60 @@ public class HorseGameController {
         this.Hearts = new Image("Assets/Hearts.png");
         this.Spades = new Image("Assets/Spades.png");
         this.Clubs = new Image("Assets/Clubs.png");
-        this.pokemonCardFirst = new Image("Assets/Pokemon.png");
-        this.pokemonCardSecond = new Image("Assets/Pokemon.png");
-        this.pokemonCardThird = new Image("Assets/Pokemon.png");
-        this.pokemonCardFourth = new Image("Assets/Pokemon.png");
-        this.pokemonCardFifth = new Image("Assets/Pokemon.png");
-        this.pokemonCardSixth = new Image("Assets/Pokemon.png");
-        this.pokemonCardSeventh = new Image("Assets/Pokemon.png");
-        this.pokemonCardEight = new Image("Assets/Pokemon.png");
+        this.Pokemon = new Image("Assets/Pokemon.png");
+        //this.pokemonCardSecond = new Image("Assets/Pokemon.png");
+        //this.pokemonCardThird = new Image("Assets/Pokemon.png");
+        //this.pokemonCardFourth = new Image("Assets/Pokemon.png");
+        //this.pokemonCardFifth = new Image("Assets/Pokemon.png");
+        //this.pokemonCardSixth = new Image("Assets/Pokemon.png");
+        //this.pokemonCardSeventh = new Image("Assets/Pokemon.png");
+        //this.pokemonCardEight = new Image("Assets/Pokemon.png");
     
         //gridPane.getChildren().add(new ImageView(Diamonds));
         ImageView diamonds = new ImageView(Diamonds);
         ImageView hearts = new ImageView(Hearts);
         ImageView spades = new ImageView(Spades);
         ImageView clubs = new ImageView(Clubs);
-        gridPane.add(diamonds, 1, 0);
-        gridPane.add(hearts, 1, 1);
-        gridPane.add(spades, 1, 2);
-        gridPane.add(clubs, 1, 3); 
+        ImageView pokemonCardFirst = new ImageView(Pokemon);
+        ImageView pokemonCardSecond = new ImageView(Pokemon);
+        ImageView pokemonCardThird = new ImageView(Pokemon);
+        ImageView pokemonCardFourth = new ImageView(Pokemon);
+        ImageView pokemonCardFifth = new ImageView(Pokemon);
+        ImageView pokemonCardSixth = new ImageView(Pokemon);
+        ImageView pokemonCardSeventh = new ImageView(Pokemon);
+        ImageView pokemonCardEight = new ImageView(Pokemon);
+        pokemonCardFirst.setFitHeight(100);
+        pokemonCardFirst.setFitWidth(60);
+        pokemonCardSecond.setFitHeight(100);
+        pokemonCardSecond.setFitWidth(60);
+        pokemonCardThird.setFitHeight(100);
+        pokemonCardThird.setFitWidth(60);
+        pokemonCardFourth.setFitHeight(100);
+        pokemonCardFourth.setFitWidth(60);
+        pokemonCardFifth.setFitHeight(100);
+        pokemonCardFifth.setFitWidth(60);
+        pokemonCardSixth.setFitHeight(100);
+        pokemonCardSixth.setFitWidth(60);
+        pokemonCardSeventh.setFitHeight(100);
+        pokemonCardSeventh.setFitWidth(60);
+        pokemonCardEight.setFitHeight(100);
+        pokemonCardEight.setFitWidth(60);
+
+        gridPane.add(diamonds, game.raceLocation.get("Diamonds"), 0);
+        gridPane.add(hearts, game.raceLocation.get("Hearts"), 1);
+        gridPane.add(spades, game.raceLocation.get("Spades"), 2);
+        gridPane.add(clubs, game.raceLocation.get("Clubs"), 3); 
+        gridPane.add(pokemonCardFirst, 1, 5);
+        gridPane.add(pokemonCardSecond, 2, 5);
+        gridPane.add(pokemonCardThird, 3, 5);
+        gridPane.add(pokemonCardFourth, 4, 5);
+        gridPane.add(pokemonCardFifth, 5, 5);
+        gridPane.add(pokemonCardSixth, 6, 5);
+        gridPane.add(pokemonCardSeventh, 7, 5);
+        gridPane.add(pokemonCardEight, 8, 5);
+        
+
+
 
 
         
@@ -83,32 +120,7 @@ public class HorseGameController {
         
     }
 
-    @FXML
-    private void OnSetUpGamePressed(ActionEvent event){
-        // GridPane gridPane = new GridPane();
-        // this.Diamonds= new Image("Assets/Diamonds.png");
-        // this.Hearts = new Image("Assets/Hearts.png");
-        // this.Spades = new Image("Assets/Spades.png");
-        // this.Clubs = new Image("Assets/Clubs.png");
-        // this.pokemonCardFirst = new Image("Assets/Pokemon.png");
-        // this.pokemonCardSecond = new Image("Assets/Pokemon.png");
-        // this.pokemonCardThird = new Image("Assets/Pokemon.png");
-        // this.pokemonCardFourth = new Image("Assets/Pokemon.png");
-        // this.pokemonCardFifth = new Image("Assets/Pokemon.png");
-        // this.pokemonCardSixth = new Image("Assets/Pokemon.png");
-        // this.pokemonCardSeventh = new Image("Assets/Pokemon.png");
-        // this.pokemonCardEight = new Image("Assets/Pokemon.png");
-    
-        // gridPane.getChildren().add(new ImageView(Diamonds));
-        // ImageView diamonds = new ImageView(Diamonds);
-        // ImageView hearts = new ImageView(Hearts);
-        // ImageView spades = new ImageView(Spades);
-        // ImageView clubs = new ImageView(Clubs);
-        // gridPane.add(diamonds, 0, 0);
-        // gridPane.add(hearts, 1, 1);
-        // gridPane.add(spades, 1, 2);
-        // gridPane.add(clubs, 1, 3);
-    }
+   
 
     @FXML
     private void OnNewGameButtonPressed(ActionEvent event) {
@@ -117,8 +129,12 @@ public class HorseGameController {
 
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) {
-        ///game.pickRandomCard();
+        Card currentRandCard = game.pickRandomCard();
+        //Card currentTableCard = game.randomTableCard();
         System.out.println(game.pickRandomCard());
+        game.goForward(currentRandCard);
+        //game.goBackwards(currentTableCard);
+        //game.goToStartCard();
 }
     // @FXML 
     // private void setStartPos(){
