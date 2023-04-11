@@ -55,7 +55,7 @@ public class HorseGameController {
         this.pokemonCardSeventh = new Image("Assets/Pokemon.png");
         this.pokemonCardEight = new Image("Assets/Pokemon.png");
     
-        //this.gridPane.getChildren().add(new ImageView(Diamonds));
+        this.gridPane.getChildren().add(new ImageView(Diamonds));
         ImageView diamonds = new ImageView(Diamonds);
         ImageView hearts = new ImageView(Hearts);
         ImageView spades = new ImageView(Spades);
