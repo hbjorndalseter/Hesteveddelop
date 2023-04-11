@@ -23,7 +23,7 @@ public class HorseGameController {
     private Button newCardButton;
 
     HorseGame game;
-    GridPane gridPane;
+    //GridPane gridPane;
     Image Diamonds;
     Image Hearts;
     Image Spades;
@@ -41,7 +41,7 @@ public class HorseGameController {
     public HorseGameController() {
         HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
         this.game = new HorseGame();
-        this.gridPane = new GridPane();
+        GridPane gridPane = new GridPane();
         this.Diamonds= new Image("Assets/Diamonds.png");
         this.Hearts = new Image("Assets/Hearts.png");
         this.Spades = new Image("Assets/Spades.png");
@@ -55,15 +55,15 @@ public class HorseGameController {
         this.pokemonCardSeventh = new Image("Assets/Pokemon.png");
         this.pokemonCardEight = new Image("Assets/Pokemon.png");
     
-        this.gridPane.getChildren().add(new ImageView(Diamonds));
+        gridPane.getChildren().add(new ImageView(Diamonds));
         ImageView diamonds = new ImageView(Diamonds);
         ImageView hearts = new ImageView(Hearts);
         ImageView spades = new ImageView(Spades);
         ImageView clubs = new ImageView(Clubs);
-        this.gridPane.add(diamonds, 0, 0);
-        this.gridPane.add(hearts, 1, 1);
-        this.gridPane.add(spades, 1, 2);
-        this.gridPane.add(clubs, 1, 3);
+        gridPane.add(diamonds, 0, 0);
+        gridPane.add(hearts, 1, 1);
+        gridPane.add(spades, 1, 2);
+        gridPane.add(clubs, 1, 3);
 
 
         
