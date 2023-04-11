@@ -24,40 +24,46 @@ public class HorseGameController {
 
     HorseGame game;
     GridPane gridPane;
-    ImageView Diamonds;
-    ImageView Hearts;
-    ImageView Spades;
-    ImageView Clubs;
-    ImageView pokemonCardFirst;
-    ImageView pokemonCardSecond;
-    ImageView pokemonCardThird;
-    ImageView pokemonCardFourth;
-    ImageView pokemonCardFifth;
-    ImageView pokemonCardSixth;
-    ImageView pokemonCardSeventh;
-    ImageView pokemonCardEight;
+    Image Diamonds;
+    Image Hearts;
+    Image Spades;
+    Image Clubs;
+    Image pokemonCardFirst;
+    Image pokemonCardSecond;
+    Image pokemonCardThird;
+    Image pokemonCardFourth;
+    Image pokemonCardFifth;
+    Image pokemonCardSixth;
+    Image pokemonCardSeventh;
+    Image pokemonCardEight;
 
     public HorseGameController() {
         HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
         this.game = new HorseGame();
         this.gridPane = new GridPane();
-        this.Diamonds= new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2010.15.05.png");
-        this.Hearts = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2010.15.00.png");
-        this.Spades = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2010.14.41.png");
-        this.Clubs = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2010.13.54.png");
-        this.pokemonCardFirst = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        this.pokemonCardSecond = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        this.pokemonCardThird = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        this.pokemonCardFourth = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        this.pokemonCardFifth = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        this.pokemonCardSixth = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        this.pokemonCardSeventh = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        this.pokemonCardEight = new ImageView("@../../../../../../Skjermbilde%202023-03-30%20kl.%2011.20.06.png");
-        gridPane.getChildren().add(pokemonCardFirst);
-        gridPane.getChildren().add(Diamonds);
-        gridPane.getChildren().add(Hearts);
-        gridPane.getChildren().add(Spades);
-        gridPane.getChildren().add(Clubs);
+        this.Diamonds= new Image("Diamonds.png");
+        this.Hearts = new Image("Hearts.png");
+        this.Spades = new Image("Spades.png");
+        this.Clubs = new Image("Clubs.png");
+        this.pokemonCardFirst = new Image("Pokemon.png");
+        this.pokemonCardSecond = new Image("Pokemon.png");
+        this.pokemonCardThird = new Image("Pokemon.png");
+        this.pokemonCardFourth = new Image("Pokemon.png");
+        this.pokemonCardFifth = new Image("Pokemon.png");
+        this.pokemonCardSixth = new Image("Pokemon.png");
+        this.pokemonCardSeventh = new Image("Pokemon.png");
+        this.pokemonCardEight = new Image("Pokemon.png");
+    
+        this.gridPane.getChildren().add(new ImageView(Diamonds));
+
+        
+
+
+        //gridPane.getChildren().add(pokemonCardFirst);
+        //gridPane.getChildren().add(Diamonds);
+        //gridPane.getChildren().add(Hearts);
+        //gridPane.getChildren().add(Spades);
+        //gridPane.getChildren().add(Clubs);
 
         
         
