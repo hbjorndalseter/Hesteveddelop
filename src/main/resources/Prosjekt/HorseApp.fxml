@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Prosjekt.HorseGameController">
    <children>
-      <!-- <GridPane layoutX="38.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+      <GridPane layoutX="38.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
@@ -237,7 +237,7 @@
                </children>
             </GridPane>
          </children>
-      </GridPane> -->
+      </GridPane>
       <Button fx:id="newGameButton" layoutX="135.0" layoutY="497.0" mnemonicParsing="false" onAction="#OnNewGameButtonPressed" text="New game" />
       <Button fx:id="NewCardButton" layoutX="402.0" layoutY="497.0" mnemonicParsing="false" onAction="#OnNewCardButtonPressed" text="New Card" />
    </children>
