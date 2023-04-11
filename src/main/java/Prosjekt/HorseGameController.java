@@ -42,29 +42,25 @@ public class HorseGameController {
     Image pokemonCardSeventh;
     Image pokemonCardEight;
     Image Pokemon;
+    ImageView diamonds;
+    ImageView hearts;
+    ImageView clubs;
+    ImageView spades;
     
     @FXML
     private void initialize() {
-        HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
+        //HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
         this.game = new HorseGame();
         this.Diamonds= new Image("Assets/Diamonds.png");
         this.Hearts = new Image("Assets/Hearts.png");
         this.Spades = new Image("Assets/Spades.png");
         this.Clubs = new Image("Assets/Clubs.png");
         this.Pokemon = new Image("Assets/Pokemon.png");
-        //this.pokemonCardSecond = new Image("Assets/Pokemon.png");
-        //this.pokemonCardThird = new Image("Assets/Pokemon.png");
-        //this.pokemonCardFourth = new Image("Assets/Pokemon.png");
-        //this.pokemonCardFifth = new Image("Assets/Pokemon.png");
-        //this.pokemonCardSixth = new Image("Assets/Pokemon.png");
-        //this.pokemonCardSeventh = new Image("Assets/Pokemon.png");
-        //this.pokemonCardEight = new Image("Assets/Pokemon.png");
-    
-        //gridPane.getChildren().add(new ImageView(Diamonds));
-        ImageView diamonds = new ImageView(Diamonds);
-        ImageView hearts = new ImageView(Hearts);
-        ImageView spades = new ImageView(Spades);
-        ImageView clubs = new ImageView(Clubs);
+      
+        this.diamonds = new ImageView(Diamonds);
+        this.hearts = new ImageView(Hearts);
+        this.spades = new ImageView(Spades);
+        this.clubs = new ImageView(Clubs);
         ImageView pokemonCardFirst = new ImageView(Pokemon);
         ImageView pokemonCardSecond = new ImageView(Pokemon);
         ImageView pokemonCardThird = new ImageView(Pokemon);
@@ -120,6 +116,17 @@ public class HorseGameController {
         
     }
 
+    private void changeState(){
+        System.out.println("hei");
+        System.out.println(game.raceLocation.get("Diamonds"));
+        System.out.println(game.raceLocation.get("Hearts"));
+        System.out.println(game.raceLocation.get("Clubs"));
+        System.out.println(game.raceLocation.get("Spades"));
+        GridPane.setColumnIndex(diamonds, game.raceLocation.get("Diamonds"));
+        GridPane.setColumnIndex(hearts, game.raceLocation.get("Hearts"));
+        GridPane.setColumnIndex(clubs, game.raceLocation.get("Clubs"));
+        GridPane.setColumnIndex(spades, game.raceLocation.get("Spades"));
+    }
    
 
     @FXML
@@ -135,6 +142,7 @@ public class HorseGameController {
         game.goForward(currentRandCard);
         //game.goBackwards(currentTableCard);
         //game.goToStartCard();
+        this.changeState();
 }
     // @FXML 
     // private void setStartPos(){

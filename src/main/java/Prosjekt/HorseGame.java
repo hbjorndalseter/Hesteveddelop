@@ -137,8 +137,9 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
    
 
-    public void goForward(Card suit){
-        this.suit = pickRandomCard().getSuit();
+    public void goForward(Card card){
+        // this.suit = pickRandomCard().getSuit();
+        Character suit = card.getSuit();
 
         if (suit.equals('H')) {
             int currentValue = raceLocation.get("Hearts");
