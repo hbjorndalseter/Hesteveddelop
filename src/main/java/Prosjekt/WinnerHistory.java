@@ -8,8 +8,6 @@ import java.util.Scanner;
 
 public class WinnerHistory implements HorseInterface{
 
-    // HashMap<String, Integer> winners = new HashMap<>();
-
     HorseGame horseGame = new HorseGame();
 
     @Override
@@ -31,16 +29,13 @@ public class WinnerHistory implements HorseInterface{
         }
     }
 
-    private void printWinners(){
-        try {
-            File file = new File("Assets/HorseGameWinners.txt");
-            Scanner scanner = new Scanner("Assets/HorseGameWinners.txt");
-            String winners = scanner.nextLine();
-            scanner.close();
-            System.out.println(winners);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void printWinners() throws IOException{
+        File file = new File("Assets/HorseGameWinners.txt");
+        Scanner scanner = new Scanner("Assets/HorseGameWinners.txt");
+        String winners = scanner.nextLine();
+        scanner.close();
+        System.out.println(winners);
     }
-
 }
+
+
