@@ -134,7 +134,6 @@ public class HorseGameController {
     }
 
     private void changeState(){
-        System.out.println("hei");
         System.out.println(game.raceLocation.get("Diamonds"));
         System.out.println(game.raceLocation.get("Hearts"));
         System.out.println(game.raceLocation.get("Clubs"));
