@@ -1,4 +1,4 @@
-package Prosjekt;
+package prosjekt;
 
 import org.junit.jupiter.api.Test;
 import org.testfx.framework.junit5.ApplicationTest;
