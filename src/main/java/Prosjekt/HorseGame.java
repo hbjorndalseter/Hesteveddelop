@@ -19,6 +19,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     String winnerKey;
     boolean winnerIsSet;
     GridPane gridPane;
+    WinnerHistory winnerHistory;
     
 
     public HorseGame(){
@@ -36,6 +37,8 @@ public class HorseGame extends CardDeck implements HorseInterface {
         raceLocation.put("Clubs", 0);
         raceLocation.put("Spades", 0);
         raceLocation.put("Diamonds", 0);
+        
+        this.winnerHistory = new WinnerHistory();
 
     }
 
@@ -57,8 +60,10 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
     @Override
     public void addWinner() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addWinner'");
+        if (this.winnerIsSet){
+            this.winners.put(this.winnerKey, +1);
+        }
+        
     }
 
     public void createUsername(String userName) {
