@@ -12,6 +12,7 @@ public abstract class CardDeck {
 	private ArrayList<Card> usedCards;
 	private static Random rand = new Random();
 	private ArrayList<Card> originalList = new ArrayList<>();
+	private ArrayList<Card> dummeKort = new ArrayList<>();
 
 	public CardDeck(int suitSize) {
 		for (int i = 0; i < Card.SUITS.length(); i++) {
@@ -23,8 +24,10 @@ public abstract class CardDeck {
 		}
 		this.usedCards = new ArrayList<>();
 		this.rand = new Random();
-		
+			
+		}
 	}
+	
 
 	@Override
 	public String toString() {
