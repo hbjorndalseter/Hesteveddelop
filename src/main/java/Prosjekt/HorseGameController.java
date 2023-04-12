@@ -155,8 +155,8 @@ public class HorseGameController {
 
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) throws IOException {
-        doThingOne();
-        doThingTwo();
+        moveHorse();
+        showCard();
         game.winnerKey();
         if (game.winnerIsSet) {
            VinnerenEr();
@@ -169,7 +169,7 @@ public class HorseGameController {
 
     
     
-    private void doThingOne() {
+    private void moveHorse() {
         this.currentRandCard = game.pickRandomCard();
         //if(game.randomTableCard() != null){
         //Card currentTableCard = game.randomTableCard();
@@ -183,7 +183,7 @@ public class HorseGameController {
     }
 
     
-    public void doThingTwo() {
+    public void showCard() {
         myLabel.setText(this.currentRandCard.toString());
     }
 
