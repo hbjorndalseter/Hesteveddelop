@@ -24,8 +24,8 @@ public class HorseGameController {
     @FXML
     private Button newGameButton;
 
-    @FXML
-    private Button newCardButton;
+    @FXML   
+    public Button newCardButton;
 
     @FXML
     private GridPane gridPane;
@@ -101,6 +101,7 @@ public class HorseGameController {
         gridPane.add(pokemonCardSixth, 6, 5);
         gridPane.add(pokemonCardSeventh, 7, 5);
         gridPane.add(pokemonCardEight, 8, 5);
+
         
 
 
@@ -137,10 +138,11 @@ public class HorseGameController {
         System.out.println(newGameButton.getText());
     }
 
-    newCardButton.setOnAction(event -> {
+    @FXML
+    public void onNewCardButtonPressed(ActionEvent event) {
         performAction1();
         performAction2();
-    });
+}
 
     @FXML
     private void performAction1() {
@@ -160,7 +162,7 @@ public class HorseGameController {
     private void performAction2() {
         System.out.println("Action 2 ");
     }
-    
+
     // @FXML 
     // private void setStartPos(){
     //     GridPane.setColumnIndex(diamonds, 1);
