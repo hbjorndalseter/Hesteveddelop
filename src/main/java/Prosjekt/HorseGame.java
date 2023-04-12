@@ -39,7 +39,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
     }
 
-    @Override
     public void newGame(String...userNames) {
         if(userNames.length <= 5){
             return;
@@ -52,7 +51,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
         }
     }
 
-    @Override
     public void runGame() {
        HorseGame game = new HorseGame();
     }
@@ -63,7 +61,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
         throw new UnsupportedOperationException("Unimplemented method 'addWinner'");
     }
 
-    @Override
     public void createUsername(String userName) {
         if(!(userName.matches("[a-zA-Z]+"))){
             for (String user : users){
@@ -86,7 +83,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
           }
         }
 
-     @Override
     public String endGame() {
         if (Collections.max(this.raceLocation.values()) == 9 && this.winnerIsSet == true){
             return this.winnerKey;
