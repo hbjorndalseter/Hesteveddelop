@@ -139,13 +139,19 @@ public class HorseGameController {
     }
 
     @FXML
-    public void onNewCardButtonPressed(ActionEvent event) {
-        performAction1();
-        performAction2();
+    private void OnNewCardButtonPressed(ActionEvent event) {
+        doTwoThings();
+    }
+
+    
+    public void doTwoThings() {
+        doThingOne();
+        doThingTwo();
 }
 
-    @FXML
-    private void performAction1() {
+    
+    
+    private void doThingOne() {
         Card currentRandCard = game.pickRandomCard();
         //if(game.randomTableCard() != null){
         //Card currentTableCard = game.randomTableCard();
@@ -158,8 +164,8 @@ public class HorseGameController {
         this.changeState(); 
     }
 
-    @FXML
-    private void performAction2() {
+    
+    private void doThingTwo() {
         System.out.println("Action 2 ");
     }
 
