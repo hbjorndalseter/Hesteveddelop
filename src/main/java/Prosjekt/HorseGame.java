@@ -83,7 +83,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     }
 
     public void winnerKey(){
-        for(Entry<String, Integer> entry: raceLocation.entrySet()) {
+        for(Entry<String, Integer> entry: this.raceLocation.entrySet()) {
     
             if(entry.getValue() == 9) {
               this.winnerKey = entry.getKey();

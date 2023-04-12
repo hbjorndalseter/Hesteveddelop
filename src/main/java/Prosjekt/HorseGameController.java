@@ -155,9 +155,10 @@ public class HorseGameController {
     private void OnNewCardButtonPressed(ActionEvent event) {
         doThingOne();
         doThingTwo();
-        //if (Collections.max(locationValue) == 9) {
-          //  VinnerenEr();
-        //}
+        game.winnerKey();
+        if (game.winnerIsSet) {
+           VinnerenEr();
+        }
     }
 
     
@@ -182,14 +183,7 @@ public class HorseGameController {
 
     
     private void VinnerenEr() {
-        for (Map.Entry<String, Integer> entry : raceLocation.entrySet()) {
-            if (entry.getValue() == 9) {
-                keyToFind = entry.getKey();                    
-                break;
-            }
-        if (keyToFind != null) {
-                hvemVinner.setText("Vinneren er:" + keyToFind);
-        }
+        hvemVinner.setText("Vinneren er " + game.winnerKey);
     }
     }
 
@@ -224,5 +218,3 @@ public class HorseGameController {
     //     GridPane.setRowIndex(pokemonCardEight, 9);
 
     // }
-
-}
