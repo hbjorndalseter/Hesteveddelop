@@ -37,6 +37,11 @@ public class HorseGame extends CardDeck implements HorseInterface {
         raceLocation.put("Clubs", 0);
         raceLocation.put("Spades", 0);
         raceLocation.put("Diamonds", 0);
+
+        this.winners.put("Hearts", 0);
+        this.winners.put("Clubs", 0);
+        this.winners.put("Diamonds", 0);
+        this.winners.put("Spades", 0);
         
         this.winnerHistory = new WinnerHistory();
 
