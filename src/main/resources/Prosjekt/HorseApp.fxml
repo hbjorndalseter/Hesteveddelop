@@ -10,7 +10,7 @@
 <Pane fx:id="morenDin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Prosjekt.HorseGameController">
    <children>
       <Button fx:id="newGameButton" layoutX="135.0" layoutY="497.0" mnemonicParsing="false" onAction="#OnNewGameButtonPressed" text="New game" />
-      <Button fx:id="NewCardButton" layoutX="402.0" layoutY="497.0" mnemonicParsing="false" onAction="#OnNewCardButtonPressed" text="New Card" />
+      <Button fx:id="newCardButton" layoutX="402.0" layoutY="497.0" mnemonicParsing="false" onAction="#OnNewCardButtonPressed" text="New Card" />
       <Label fx:id="myLabel" layoutX="650.0" layoutY="497.0" text="Kort" />
       <Label fx:id="hvemVinner" layoutX="331.0" layoutY="541.0" prefHeight="87.0" prefWidth="500.0" text="Hvem vinner?" />
       <GridPane fx:id="gridPane" prefHeight="447.0" prefWidth="814.0">         

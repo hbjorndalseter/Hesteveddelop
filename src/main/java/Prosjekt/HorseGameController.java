@@ -163,6 +163,7 @@ public class HorseGameController {
            game.addWinner();
            winnerHistory.saveWinners(game.winners);
            winnerHistory.printWinners();
+           newCardButton.setDisable(true);
         }
     }
 
