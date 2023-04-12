@@ -14,12 +14,12 @@ public class WinnerHistory {
 
     public void saveWinners(HashMap<String, Integer> winners){
         try { 
-            FileWriter fileWriter = new FileWriter("HorseGameWinners.txt");
+            FileWriter fileWriter = new FileWriter("src/main/resources/Assets/HorseGameWinners.txt");
             fileWriter.write(
             "Diamonds has: " + winners.get("Diamonds") 
-            + " wins, Hearts has: " + winners.get("Hearts") + "wins, Spades has: " 
-            + winners.get("Spades") + "wins, Clubs has: " 
-            + winners.get("Clubs") + "wins");
+            + " wins, Hearts has: " + winners.get("Hearts") + " wins, Spades has: " 
+            + winners.get("Spades") + " wins, Clubs has: " 
+            + winners.get("Clubs") + " wins");
             fileWriter.flush();
             fileWriter.close();
     } catch (IOException e) {

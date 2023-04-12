@@ -1,1 +1,0 @@
-Diamonds has: 0 wins, Hearts has: 0wins, Spades has: 0wins, Clubs has: 0wins
