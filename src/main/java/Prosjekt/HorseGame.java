@@ -19,7 +19,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     String winnerKey;
     boolean winnerIsSet;
     GridPane gridPane;
-    WinnerHistory winnerHistory;
+    //WinnerHistory winnerHistory;
     
 
     public HorseGame(){
@@ -43,7 +43,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
         this.winners.put("Diamonds", 0);
         this.winners.put("Spades", 0);
         
-        this.winnerHistory = new WinnerHistory();
+        ///this.winnerHistory = new WinnerHistory();
 
     }
 

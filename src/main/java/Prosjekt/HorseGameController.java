@@ -1,7 +1,10 @@
 package Prosjekt;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 //import javax.swing.Action;
 
@@ -14,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 
 public class HorseGameController {
     
@@ -29,6 +33,12 @@ public class HorseGameController {
 
     @FXML
     private GridPane gridPane;
+
+    @FXML
+    private Label myLabel;
+
+    @FXML
+    private Label hvemVinner;
 
     HorseGame game;
     //GridPane gridPane;
@@ -49,6 +59,9 @@ public class HorseGameController {
     ImageView hearts;
     ImageView clubs;
     ImageView spades;
+    Card currentRandCard;
+    List<Integer> locationValue;
+    String keyToFind;
     
     @FXML
     private void initialize() {
@@ -140,19 +153,17 @@ public class HorseGameController {
 
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) {
-        doTwoThings();
-    }
-
-    
-    public void doTwoThings() {
         doThingOne();
         doThingTwo();
-}
+        //if (Collections.max(locationValue) == 9) {
+          //  VinnerenEr();
+        //}
+    }
 
     
     
     private void doThingOne() {
-        Card currentRandCard = game.pickRandomCard();
+        this.currentRandCard = game.pickRandomCard();
         //if(game.randomTableCard() != null){
         //Card currentTableCard = game.randomTableCard();
         //game.goBackwards(currentTableCard);
@@ -165,8 +176,21 @@ public class HorseGameController {
     }
 
     
-    private void doThingTwo() {
-        System.out.println("Action 2 ");
+    public void doThingTwo() {
+        myLabel.setText(this.currentRandCard.toString());
+    }
+
+    
+    private void VinnerenEr() {
+        for (Map.Entry<String, Integer> entry : raceLocation.entrySet()) {
+            if (entry.getValue() == 9) {
+                keyToFind = entry.getKey();                    
+                break;
+            }
+        if (keyToFind != null) {
+                hvemVinner.setText("Vinneren er:" + keyToFind);
+        }
+    }
     }
 
     // @FXML 
