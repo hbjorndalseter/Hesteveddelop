@@ -7,7 +7,10 @@ import java.util.HashMap;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -134,8 +137,13 @@ public class HorseGameController {
         System.out.println(newGameButton.getText());
     }
 
+    newCardButton.setOnAction(event -> {
+        performAction1();
+        performAction2();
+    });
+
     @FXML
-    private void OnNewCardButtonPressed(ActionEvent event) {
+    private void performAction1() {
         Card currentRandCard = game.pickRandomCard();
         //if(game.randomTableCard() != null){
         //Card currentTableCard = game.randomTableCard();
@@ -145,10 +153,14 @@ public class HorseGameController {
         game.goForward(currentRandCard);
         // game.goBackwards(currentTableCard);
         //game.goToStartCard();
-        this.changeState();
+        this.changeState(); 
+    }
 
-        
-}
+    @FXML
+    private void performAction2() {
+        System.out.println("Action 2 ");
+    }
+    
     // @FXML 
     // private void setStartPos(){
     //     GridPane.setColumnIndex(diamonds, 1);
