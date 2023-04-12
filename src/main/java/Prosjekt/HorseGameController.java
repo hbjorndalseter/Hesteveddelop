@@ -137,15 +137,17 @@ public class HorseGameController {
     @FXML
     private void OnNewCardButtonPressed(ActionEvent event) {
         Card currentRandCard = game.pickRandomCard();
-        if(game.randomTableCard() != null){
-        Card currentTableCard = game.randomTableCard();
-        game.goBackwards(currentTableCard);
-        }
+        //if(game.randomTableCard() != null){
+        //Card currentTableCard = game.randomTableCard();
+        //game.goBackwards(currentTableCard);
+        //}
         System.out.println(game.pickRandomCard());
         game.goForward(currentRandCard);
         // game.goBackwards(currentTableCard);
         //game.goToStartCard();
         this.changeState();
+
+        
 }
     // @FXML 
     // private void setStartPos(){
