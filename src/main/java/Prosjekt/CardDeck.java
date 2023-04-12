@@ -15,7 +15,7 @@ public abstract class CardDeck {
 
 	public CardDeck(int suitSize) {
 		for (int i = 0; i < Card.SUITS.length(); i++) {
-			for (int face = 1; face <= suitSize; face++) {
+			for (int face = 2; face <= suitSize; face++) {
 				Card card = new Card(Card.SUITS.charAt(i), face);
 				cards.add(card);
 				originalList.add(card);
