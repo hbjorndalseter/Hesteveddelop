@@ -65,8 +65,9 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
     @Override
     public void addWinner() {
+        int currentWinner = this.winners.get(this.winnerKey);
         if (this.winnerIsSet){
-            this.winners.put(this.winnerKey, +1);
+            this.winners.put(this.winnerKey, currentWinner += 1);
         }
         
     }

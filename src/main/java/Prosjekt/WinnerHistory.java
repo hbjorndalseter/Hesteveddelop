@@ -6,34 +6,39 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class WinnerHistory implements HorseInterface{
+public class WinnerHistory {
 
     HorseGame horseGame = new HorseGame();
 
-    @Override
-    public void addWinner() {
-        horseGame.addWinner();
-    }
 
-    private void saveWinners(){
+
+    public void saveWinners(HashMap<String, Integer> winners){
         try { 
-            FileWriter fileWriter = new FileWriter("HorseGameWinner.txt");
+            FileWriter fileWriter = new FileWriter("HorseGameWinners.txt");
             fileWriter.write(
-            "Diamonds has: " + horseGame.winners.get("Diamonds") 
-            + " wins, Hearts has: " + horseGame.winners.get("Hearts") + "wins, Spades has: " 
-            + horseGame.winners.get("Spades") + "wins, Clubs has: " 
-            + horseGame.winners.get("Clubs") + "wins");
+            "Diamonds has: " + winners.get("Diamonds") 
+            + " wins, Hearts has: " + winners.get("Hearts") + "wins, Spades has: " 
+            + winners.get("Spades") + "wins, Clubs has: " 
+            + winners.get("Clubs") + "wins");
+            fileWriter.flush();
             fileWriter.close();
     } catch (IOException e) {
         e.printStackTrace();
         }
     }
 
-    private void printWinners() throws IOException{
-        File file = new File("Assets/HorseGameWinners.txt");
-        Scanner scanner = new Scanner("Assets/HorseGameWinners.txt");
-        String winners = scanner.nextLine();
-        scanner.close();
-        System.out.println(winners);
+    // public void printWinners() throws IOException{
+    //     File file = new File("Assets/HorseGameWinners.txt");
+    //     Scanner scanner = new Scanner("Assets/HorseGameWinners.txt");
+    //     String winners = scanner.nextLine();
+    //     scanner.close();
+    //     System.out.println(winners);
+    // }
+
+    public static void main(String[] args) {
+        WinnerHistory test = new WinnerHistory();
+        HorseGame test1 = new HorseGame();
+        HashMap testState = test1.winners;
+        test.saveWinners(testState);
     }
 }

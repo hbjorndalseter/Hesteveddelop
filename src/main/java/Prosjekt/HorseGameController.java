@@ -1,5 +1,6 @@
 package Prosjekt;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -62,11 +63,13 @@ public class HorseGameController {
     Card currentRandCard;
     List<Integer> locationValue;
     String keyToFind;
+    WinnerHistory winnerHistory;
     
     @FXML
     private void initialize() {
         //HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
         this.game = new HorseGame();
+        this.winnerHistory = new WinnerHistory();
         this.Diamonds= new Image("Assets/Diamonds.png");
         this.Hearts = new Image("Assets/Hearts.png");
         this.Spades = new Image("Assets/Spades.png");
@@ -151,12 +154,15 @@ public class HorseGameController {
     }
 
     @FXML
-    private void OnNewCardButtonPressed(ActionEvent event) {
+    private void OnNewCardButtonPressed(ActionEvent event) throws IOException {
         doThingOne();
         doThingTwo();
         game.winnerKey();
         if (game.winnerIsSet) {
            VinnerenEr();
+           game.addWinner();
+           winnerHistory.saveWinners(game.winners);
+           //winnerHistory.printWinners();
         }
     }
 
