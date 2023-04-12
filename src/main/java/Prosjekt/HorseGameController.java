@@ -182,7 +182,7 @@ public class HorseGameController {
 
     
     private void VinnerenEr() {
-        hvemVinner.setText("Vinneren er  " + game.winnerKey + "og vinneren MÅ chugge 0.5L pils!");
+        hvemVinner.setText("Vinneren er  " + game.winnerKey + "og vinneren MÅ chugge 0.5L pils! hehe");
     }
     }
 
