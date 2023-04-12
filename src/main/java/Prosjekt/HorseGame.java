@@ -19,6 +19,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     String winnerKey;
     boolean winnerIsSet;
     GridPane gridPane;
+    WinnerHistory winnerHistory;
     
 
     public HorseGame(){
@@ -36,10 +37,11 @@ public class HorseGame extends CardDeck implements HorseInterface {
         raceLocation.put("Clubs", 0);
         raceLocation.put("Spades", 0);
         raceLocation.put("Diamonds", 0);
+        
+        this.winnerHistory = new WinnerHistory();
 
     }
 
-    @Override
     public void newGame(String...userNames) {
         if(userNames.length <= 5){
             return;
@@ -52,18 +54,18 @@ public class HorseGame extends CardDeck implements HorseInterface {
         }
     }
 
-    @Override
     public void runGame() {
        HorseGame game = new HorseGame();
     }
 
     @Override
     public void addWinner() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addWinner'");
+        if (this.winnerIsSet){
+            this.winners.put(this.winnerKey, +1);
+        }
+        
     }
 
-    @Override
     public void createUsername(String userName) {
         if(!(userName.matches("[a-zA-Z]+"))){
             for (String user : users){
@@ -86,7 +88,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
           }
         }
 
-     @Override
     public String endGame() {
         if (Collections.max(this.raceLocation.values()) == 9 && this.winnerIsSet == true){
             return this.winnerKey;
