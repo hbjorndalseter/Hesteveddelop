@@ -95,7 +95,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
     public String endGame() {
         if (Collections.max(this.raceLocation.values()) == 9 && this.winnerIsSet == true){
-            return this.winnerKey;
+            return this.winnerKey + "has won the game";
         }
         else{
             return null;
