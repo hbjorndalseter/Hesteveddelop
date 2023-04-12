@@ -182,7 +182,7 @@ public class HorseGameController {
 
     
     private void VinnerenEr() {
-        hvemVinner.setText("Vinneren er " + game.winnerKey);
+        hvemVinner.setText("Vinneren er  " + game.winnerKey);
     }
     }
 
