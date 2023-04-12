@@ -27,13 +27,13 @@ public class WinnerHistory {
         }
     }
 
-    // public void printWinners() throws IOException{
-    //     File file = new File("Assets/HorseGameWinners.txt");
-    //     Scanner scanner = new Scanner("Assets/HorseGameWinners.txt");
-    //     String winners = scanner.nextLine();
-    //     scanner.close();
-    //     System.out.println(winners);
-    // }
+     public void printWinners() throws IOException{
+         File file = new File("src/main/resources/Assets/HorseGameWinners.txt");
+         Scanner scanner = new Scanner(file);
+         String winners = scanner.nextLine();
+         scanner.close();
+         System.out.println(winners);
+     }
 
     public static void main(String[] args) {
         WinnerHistory test = new WinnerHistory();

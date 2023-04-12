@@ -162,7 +162,7 @@ public class HorseGameController {
            VinnerenEr();
            game.addWinner();
            winnerHistory.saveWinners(game.winners);
-           //winnerHistory.printWinners();
+           winnerHistory.printWinners();
         }
     }
 
