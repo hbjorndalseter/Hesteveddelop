@@ -1,4 +1,4 @@
 Diamonds has: 0 wins
-Hearts has: 2 wins
-Spades has: 1 wins
-Clubs has: 0 wins
+Hearts has: 0 wins
+Spades has: 0 wins
+Clubs has: 1 wins

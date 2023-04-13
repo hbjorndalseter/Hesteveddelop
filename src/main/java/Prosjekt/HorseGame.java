@@ -10,7 +10,8 @@ import javafx.scene.layout.GridPane;
 
 public class HorseGame extends CardDeck implements HorseInterface {
 
-    HashMap<String, Integer> winners;
+    HashMap<String, Integer> winners = new HashMap<String, Integer>();
+
     public HashMap<String, Integer> raceLocation; 
     List<String> users;
     char suit;
@@ -28,7 +29,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
         RestoreWinnerHistory restoredData = new RestoreWinnerHistory();
         restoredData.restoreData();
 
-        this.winners = new HashMap<String, Integer>();
         this.raceLocation = new HashMap<String, Integer>();
         this.users = new ArrayList<>();
         this.locationValue = new ArrayList<>();
@@ -40,10 +40,10 @@ public class HorseGame extends CardDeck implements HorseInterface {
         raceLocation.put("Spades", 0);
         raceLocation.put("Diamonds", 0);
 
-        this.winners.put("Hearts", restoredData.currentWinnerValues.get(0));
-        this.winners.put("Clubs", restoredData.currentWinnerValues.get(1));
-        this.winners.put("Diamonds", restoredData.currentWinnerValues.get(2));
-        this.winners.put("Spades", restoredData.currentWinnerValues.get(3));
+        this.winners.put("Hearts", restoredData.currentWinnerValues.get(1));
+        this.winners.put("Clubs", restoredData.currentWinnerValues.get(3));
+        this.winners.put("Diamonds", restoredData.currentWinnerValues.get(0));
+        this.winners.put("Spades", restoredData.currentWinnerValues.get(2));
         
         ///this.winnerHistory = new WinnerHistory();
 
