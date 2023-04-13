@@ -47,6 +47,9 @@ public class HorseGameTest {
     @Test 
     void cardInitializeTest() {
 		//assertTrue(checkState(new Card('S', 1), 'S', 1));
+        Card card = new Card('D', 8);
+        assertEquals('D', card.getSuit());
+        assertEquals(8, card.getFace());
 
     }
 }
