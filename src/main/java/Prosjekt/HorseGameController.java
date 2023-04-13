@@ -8,9 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-
-//import javax.swing.Action;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,11 +22,6 @@ import javafx.scene.layout.Pane;
 public class HorseGameController {
     
     public HashMap<String, Integer> raceLocation; 
-    private ArrayList<Card> cards;
-    private Object suit;
-
-    @FXML
-    private Button newGameButton;
 
     @FXML   
     public Button newCardButton;
@@ -47,34 +39,31 @@ public class HorseGameController {
     private Label highScore;
 
     HorseGame game;
-    //GridPane gridPane;
-    Image Diamonds;
-    Image Hearts;
-    Image Spades;
-    Image Clubs;
-    Image pokemonCardFirst;
-    Image pokemonCardSecond;
-    Image pokemonCardThird;
-    Image pokemonCardFourth;
-    Image pokemonCardFifth;
-    Image pokemonCardSixth;
-    Image pokemonCardSeventh;
-    Image pokemonCardEight;
+
+    private Image Diamonds;
+    private Image Hearts;
+    private Image Spades;
+    private Image Clubs;
+ 
     Image Pokemon;
+
     ImageView diamonds;
     ImageView hearts;
     ImageView clubs;
     ImageView spades;
-    Card currentRandCard;
-    List<Integer> locationValue;
-    String keyToFind;
-    WinnerHistory winnerHistory;
+
+    private Card currentRandCard;
+
+    private List<Integer> locationValue;
+
+    private WinnerHistory winnerHistory;
     
     @FXML
     private void initialize() {
-        //HashMap<String, Integer> raceLocation = new HashMap<String, Integer>();
+
         this.game = new HorseGame();
         this.winnerHistory = new WinnerHistory();
+
         this.Diamonds= new Image("Assets/Diamonds.png");
         this.Hearts = new Image("Assets/Hearts.png");
         this.Spades = new Image("Assets/Spades.png");
@@ -85,6 +74,7 @@ public class HorseGameController {
         this.hearts = new ImageView(Hearts);
         this.spades = new ImageView(Spades);
         this.clubs = new ImageView(Clubs);
+
         ImageView pokemonCardFirst = new ImageView(Pokemon);
         ImageView pokemonCardSecond = new ImageView(Pokemon);
         ImageView pokemonCardThird = new ImageView(Pokemon);
@@ -93,6 +83,7 @@ public class HorseGameController {
         ImageView pokemonCardSixth = new ImageView(Pokemon);
         ImageView pokemonCardSeventh = new ImageView(Pokemon);
         ImageView pokemonCardEight = new ImageView(Pokemon);
+
         pokemonCardFirst.setFitHeight(100);
         pokemonCardFirst.setFitWidth(60);
         pokemonCardSecond.setFitHeight(100);
@@ -122,23 +113,7 @@ public class HorseGameController {
         gridPane.add(pokemonCardSixth, 6, 5);
         gridPane.add(pokemonCardSeventh, 7, 5);
         gridPane.add(pokemonCardEight, 8, 5);
-
-        
-
-
-
-
-        
-
-
-        // gridPane.getChildren().add(pokemonCardFirst);
-        // gridPane.getChildren().add(Diamonds);
-        // gridPane.getChildren().add(Hearts);
-        // gridPane.getChildren().add(Spades);
-        // gridPane.getChildren().add(Clubs);
-
-        
-        
+    
     }
 
     private void changeState(){
@@ -150,12 +125,6 @@ public class HorseGameController {
         GridPane.setColumnIndex(hearts, game.raceLocation.get("Hearts"));
         GridPane.setColumnIndex(clubs, game.raceLocation.get("Clubs"));
         GridPane.setColumnIndex(spades, game.raceLocation.get("Spades"));
-    }
-   
-
-    @FXML
-    private void OnNewGameButtonPressed(ActionEvent event) {
-        System.out.println(newGameButton.getText());
     }
 
     @FXML
@@ -175,16 +144,11 @@ public class HorseGameController {
            while (scanner.hasNextLine()) {
             String winners = scanner.nextLine();
             allWinners += "\n" + winners;
-            //ArrayList<String> allWinners = new ArrayList<String>();
-            //allWinners.add(winners);
-            System.out.println(allWinners);
            }
            scanner.close();
            highScore.setText(allWinners);
         }
     }
-
-    
     
     public void moveHorse() {
         this.currentRandCard = game.pickRandomCard();
@@ -199,45 +163,11 @@ public class HorseGameController {
         this.changeState(); 
     }
 
-    
     public void showCard() {
         myLabel.setText(this.currentRandCard.toString());
     }
 
-    
     private void VinnerenEr() {
         hvemVinner.setText("Vinneren er  " + game.winnerKey + ", og vinnerne MÅ chugge 0.5L pils! ");
     }
-    }
-
-    // @FXML 
-    // private void setStartPos(){
-    //     GridPane.setColumnIndex(diamonds, 1);
-    //     GridPane.setColumnIndex(Hearts, 1);
-    //     GridPane.setColumnIndex(Spades, 1);
-    //     GridPane.setColumnIndex(Clubs, 1);
-
-    //     GridPane.setRowIndex(Diamonds, 1);
-    //     GridPane.setRowIndex(Hearts, 2);
-    //     GridPane.setRowIndex(Spades, 3);
-    //     GridPane.setRowIndex(Clubs, 4);
-        
-    //     GridPane.setColumnIndex(pokemonCardFirst, 2);
-    //     GridPane.setColumnIndex(pokemonCardSecond, 2);
-    //     GridPane.setColumnIndex(pokemonCardThird, 2);
-    //     GridPane.setColumnIndex(pokemonCardFourth, 2);
-    //     GridPane.setColumnIndex(pokemonCardFifth, 2);
-    //     GridPane.setColumnIndex(pokemonCardSixth, 2);
-    //     GridPane.setColumnIndex(pokemonCardSeventh, 2);
-    //     GridPane.setColumnIndex(pokemonCardEight, 2);
-
-    //     GridPane.setRowIndex(pokemonCardFirst, 2);
-    //     GridPane.setRowIndex(pokemonCardSecond, 3);
-    //     GridPane.setRowIndex(pokemonCardThird, 4);
-    //     GridPane.setRowIndex(pokemonCardFourth, 5);
-    //     GridPane.setRowIndex(pokemonCardFifth, 6);
-    //     GridPane.setRowIndex(pokemonCardSixth, 7);
-    //     GridPane.setRowIndex(pokemonCardSeventh, 8);
-    //     GridPane.setRowIndex(pokemonCardEight, 9);
-
-    // }
+}
