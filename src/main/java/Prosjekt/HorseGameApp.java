@@ -51,15 +51,15 @@ public class HorseGameApp extends Application {
         this.pokemonCardSeventh = new Image("Assets/Pokemon.png");
         this.pokemonCardEight = new Image("Assets/Pokemon.png");
     
-        gridPane.getChildren().add(new ImageView(Diamonds));
-        ImageView diamonds = new ImageView(Diamonds);
-        ImageView hearts = new ImageView(Hearts);
-        ImageView spades = new ImageView(Spades);
-        ImageView clubs = new ImageView(Clubs);
-        gridPane.add(diamonds, 0, 0);
-        gridPane.add(hearts, 1, 1);
-        gridPane.add(spades, 1, 2);
-        gridPane.add(clubs, 1, 3); 
+        // gridPane.getChildren().add(new ImageView(Diamonds));
+        // ImageView diamonds = new ImageView(Diamonds);
+        // ImageView hearts = new ImageView(Hearts);
+        // ImageView spades = new ImageView(Spades);
+        // ImageView clubs = new ImageView(Clubs);
+        // gridPane.add(diamonds, 0, 0);
+        // gridPane.add(hearts, 1, 1);
+        // gridPane.add(spades, 1, 2);
+        // gridPane.add(clubs, 1, 3); 
 
         primaryStage.show();
     }

@@ -31,14 +31,8 @@ public class RestoreWinnerHistory {
             bufferedReader.close();
             reader.close();
         } catch (IOException e) {
-            System.out.println("Error");
+            System.out.println("Something went wrong!");
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        RestoreWinnerHistory test = new RestoreWinnerHistory();
-        test.restoreData();
-        //System.out.println(currentWinnerValues);
     }
 }

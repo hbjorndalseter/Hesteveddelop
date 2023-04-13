@@ -10,8 +10,6 @@ public class WinnerHistory {
 
     HorseGame horseGame = new HorseGame();
 
-
-
     public void saveWinners(HashMap<String, Integer> winners, String file){
         try { 
             FileWriter fileWriter = new FileWriter(file);
@@ -36,12 +34,4 @@ public class WinnerHistory {
          }
          scanner.close();
      }
-
-    // public static void main(String[] args) throws IOException {
-    //     WinnerHistory test = new WinnerHistory();
-    //     HorseGame test1 = new HorseGame();
-    //     HashMap testState = test1.winners;
-    //     test.saveWinners(testState, "src/main/resources/Assets/HorseGameWinners.txt");
-    //     test.printWinners();
-    // }
 }
