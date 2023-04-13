@@ -26,6 +26,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
 
         super(13);
         RestoreWinnerHistory restoredData = new RestoreWinnerHistory();
+        restoredData.restoreData();
 
         this.winners = new HashMap<String, Integer>();
         this.raceLocation = new HashMap<String, Integer>();
