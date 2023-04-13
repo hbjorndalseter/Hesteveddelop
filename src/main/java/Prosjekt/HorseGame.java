@@ -19,9 +19,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     List<Integer> locationValue;
     String winnerKey;
     boolean winnerIsSet;
-    GridPane gridPane;
-    //WinnerHistory winnerHistory;
-    
+    GridPane gridPane;    
 
     public HorseGame(){
 
@@ -44,9 +42,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
         this.winners.put("Clubs", restoredData.currentWinnerValues.get(3));
         this.winners.put("Diamonds", restoredData.currentWinnerValues.get(0));
         this.winners.put("Spades", restoredData.currentWinnerValues.get(2));
-        
-        ///this.winnerHistory = new WinnerHistory();
-
     }
 
     public void newGame(String...userNames) {
@@ -144,8 +139,6 @@ public class HorseGame extends CardDeck implements HorseInterface {
         }    
     }   
 
-   
-
     public void goForward(Card card){
         // this.suit = pickRandomCard().getSuit();
         Character suit = card.getSuit();
@@ -215,13 +208,4 @@ public class HorseGame extends CardDeck implements HorseInterface {
             raceLocation.put("Diamonds", 0);
             }
     }
-    //  public static void main(String[] args) {
-    //      HorseGame test1 = new HorseGame();
-    //      Card randomCard = test1.getRandomCard();
-    //      //System.out.println(randomCard);
-    //      //test1.winnerKey();
-    //      //System.out.println(test1.endGame());
-    //      System.out.println(test1.getCardDeck());        
-    //  }
-
 }
