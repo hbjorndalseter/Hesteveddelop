@@ -21,8 +21,6 @@ import javafx.scene.layout.Pane;
 
 public class HorseGameController {
     
-    public HashMap<String, Integer> raceLocation; 
-
     @FXML   
     public Button newCardButton;
 
@@ -53,8 +51,6 @@ public class HorseGameController {
     ImageView spades;
 
     private Card currentRandCard;
-
-    private List<Integer> locationValue;
 
     private WinnerHistory winnerHistory;
     
