@@ -169,7 +169,7 @@ public class HorseGameController {
 
     
     
-    private void moveHorse() {
+    public void moveHorse() {
         this.currentRandCard = game.pickRandomCard();
         //if(game.randomTableCard() != null){
         //Card currentTableCard = game.randomTableCard();
