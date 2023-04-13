@@ -16,9 +16,9 @@ public class WinnerHistory {
         try { 
             FileWriter fileWriter = new FileWriter(file);
             fileWriter.write(
-            "Diamonds has: " + winners.get("Diamonds") 
-            + " wins, Hearts has: " + winners.get("Hearts") + " wins, Spades has: " 
-            + winners.get("Spades") + " wins, Clubs has: " 
+            "Diamonds has: " + winners.get("Diamonds")
+            + " wins\nHearts has: " + winners.get("Hearts") + " wins\nSpades has: " 
+            + winners.get("Spades") + " wins\nClubs has: " 
             + winners.get("Clubs") + " wins");
             fileWriter.flush();
             fileWriter.close();
@@ -30,15 +30,18 @@ public class WinnerHistory {
      public void printWinners() throws IOException{
          File file = new File("src/main/resources/Assets/HorseGameWinners.txt");
          Scanner scanner = new Scanner(file);
+         while (scanner.hasNextLine()) {
          String winners = scanner.nextLine();
-         scanner.close();
          System.out.println(winners);
+         }
+         scanner.close();
      }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         WinnerHistory test = new WinnerHistory();
         HorseGame test1 = new HorseGame();
         HashMap testState = test1.winners;
         test.saveWinners(testState, "src/main/resources/Assets/HorseGameWinners.txt");
+        test.printWinners();
     }
 }

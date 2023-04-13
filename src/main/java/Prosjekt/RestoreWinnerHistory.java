@@ -16,7 +16,7 @@ public class RestoreWinnerHistory {
             String line;
 
             while ((line = bufferedReader.readLine()) != null){
-                System.out.println(line.toString());
+                System.out.println(line);
             } 
 
             bufferedReader.close();
