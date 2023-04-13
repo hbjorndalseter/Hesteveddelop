@@ -29,9 +29,24 @@ public class HorseGameTest {
     }
 
     @Test
-    void checkRandomCardRemovedFromCardDeck(){
+    void randomCardRemovedFromCardDeckTest(){
         var test = new HorseGame();
         test.getRandomCard();
         assertEquals(47, test.getCardDeck().size());
+    }
+
+    @Test
+    void correctWinnerTest() {
+        var game = new HorseGame();
+        var controller = new HorseGameController();
+        game.raceLocation.put("Diamonds", 9);
+        game.winnerKey();
+        assertEquals("Diamonds", game.winnerKey);
+    }
+    
+    @Test 
+    void cardInitializeTest() {
+		//assertTrue(checkState(new Card('S', 1), 'S', 1));
+
     }
 }
