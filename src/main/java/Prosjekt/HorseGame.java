@@ -25,6 +25,7 @@ public class HorseGame extends CardDeck implements HorseInterface {
     public HorseGame(){
 
         super(13);
+        RestoreWinnerHistory restoredData = new RestoreWinnerHistory();
 
         this.winners = new HashMap<String, Integer>();
         this.raceLocation = new HashMap<String, Integer>();
@@ -38,10 +39,10 @@ public class HorseGame extends CardDeck implements HorseInterface {
         raceLocation.put("Spades", 0);
         raceLocation.put("Diamonds", 0);
 
-        this.winners.put("Hearts", 0);
-        this.winners.put("Clubs", 0);
-        this.winners.put("Diamonds", 0);
-        this.winners.put("Spades", 0);
+        this.winners.put("Hearts", restoredData.currentWinnerValues.get(0));
+        this.winners.put("Clubs", restoredData.currentWinnerValues.get(1));
+        this.winners.put("Diamonds", restoredData.currentWinnerValues.get(2));
+        this.winners.put("Spades", restoredData.currentWinnerValues.get(3));
         
         ///this.winnerHistory = new WinnerHistory();
 

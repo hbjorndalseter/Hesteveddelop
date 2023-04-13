@@ -4,8 +4,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RestoreWinnerHistory {
+
+    List<Integer> currentWinnerValues = new ArrayList<>();
     
     public void restoreData(){
         try{ 
@@ -16,7 +20,12 @@ public class RestoreWinnerHistory {
             String line;
 
             while ((line = bufferedReader.readLine()) != null){
-                System.out.println(line);
+                String[] splitText = line.split(" ");
+                if (splitText.length > 2) {
+                    String winnerValue = splitText[2];
+                    this.currentWinnerValues.add(Integer.valueOf(winnerValue));
+                    System.out.println(winnerValue);
+                }
             } 
 
             bufferedReader.close();
@@ -30,5 +39,6 @@ public class RestoreWinnerHistory {
     public static void main(String[] args) {
         RestoreWinnerHistory test = new RestoreWinnerHistory();
         test.restoreData();
+        //System.out.println(currentWinnerValues);
     }
 }
