@@ -29,8 +29,9 @@ public class HorseGameTest {
     }
 
     @Test
-    void checkRandomCardIsValid(){
+    void checkRandomCardRemovedFromCardDeck(){
         var test = new HorseGame();
-        Card randomCard = new CardDeck(52);
+        test.getRandomCard();
+        assertEquals(47, test.getCardDeck().size());
     }
 }
