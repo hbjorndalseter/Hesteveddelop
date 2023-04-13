@@ -1,11 +1,13 @@
 package Prosjekt;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 //import javax.swing.Action;
 
@@ -40,6 +42,9 @@ public class HorseGameController {
 
     @FXML
     private Label hvemVinner;
+
+    @FXML
+    private Label highScore;
 
     HorseGame game;
     //GridPane gridPane;
@@ -164,6 +169,18 @@ public class HorseGameController {
            winnerHistory.saveWinners(game.winners, "src/main/resources/Assets/HorseGameWinners.txt");
            winnerHistory.printWinners();
            newCardButton.setDisable(true);
+           File file = new File("src/main/resources/Assets/HorseGameWinners.txt");
+           Scanner scanner = new Scanner(file);
+           String allWinners = " ";
+           while (scanner.hasNextLine()) {
+            String winners = scanner.nextLine();
+            allWinners += "\n" + winners;
+            //ArrayList<String> allWinners = new ArrayList<String>();
+            //allWinners.add(winners);
+            System.out.println(allWinners);
+           }
+           scanner.close();
+           highScore.setText(allWinners);
         }
     }
 

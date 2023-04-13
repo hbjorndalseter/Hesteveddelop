@@ -12,7 +12,7 @@
       <Button fx:id="newGameButton" layoutX="135.0" layoutY="497.0" mnemonicParsing="false" onAction="#OnNewGameButtonPressed" text="New game" />
       <Button fx:id="newCardButton" layoutX="402.0" layoutY="497.0" mnemonicParsing="false" onAction="#OnNewCardButtonPressed" text="New Card" />
       <Label fx:id="myLabel" layoutX="650.0" layoutY="497.0" text="Kort" />
-      <Label fx:id="hvemVinner" layoutX="331.0" layoutY="541.0" prefHeight="87.0" prefWidth="500.0" text="Hvem vinner?" />
+      <Label fx:id="hvemVinner" layoutX="100.0" layoutY="541.0" prefHeight="87.0" prefWidth="400.0" text="Hvem vinner?" />
       <GridPane fx:id="gridPane" prefHeight="447.0" prefWidth="814.0">         
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -33,5 +33,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
+      <Label fx:id="highScore" layoutX="574.0" layoutY="519.0" prefHeight="168.0" prefWidth="229.0" text="High Score" />
    </children>
 </Pane>
