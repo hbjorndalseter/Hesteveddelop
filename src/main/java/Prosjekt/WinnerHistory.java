@@ -12,9 +12,9 @@ public class WinnerHistory {
 
 
 
-    public void saveWinners(HashMap<String, Integer> winners){
+    public void saveWinners(HashMap<String, Integer> winners, String file){
         try { 
-            FileWriter fileWriter = new FileWriter("src/main/resources/Assets/HorseGameWinners.txt");
+            FileWriter fileWriter = new FileWriter(file);
             fileWriter.write(
             "Diamonds has: " + winners.get("Diamonds") 
             + " wins, Hearts has: " + winners.get("Hearts") + " wins, Spades has: " 
@@ -39,6 +39,6 @@ public class WinnerHistory {
         WinnerHistory test = new WinnerHistory();
         HorseGame test1 = new HorseGame();
         HashMap testState = test1.winners;
-        test.saveWinners(testState);
+        test.saveWinners(testState, "src/main/resources/Assets/HorseGameWinners.txt");
     }
 }

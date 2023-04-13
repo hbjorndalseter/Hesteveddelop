@@ -161,7 +161,7 @@ public class HorseGameController {
         if (game.winnerIsSet) {
            VinnerenEr();
            game.addWinner();
-           winnerHistory.saveWinners(game.winners);
+           winnerHistory.saveWinners(game.winners, "src/main/resources/Assets/HorseGameWinners.txt");
            winnerHistory.printWinners();
            newCardButton.setDisable(true);
         }
